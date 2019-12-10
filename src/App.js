@@ -5,9 +5,15 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Button />
+      <Button action={doThis} />
+        <Button action={doThat} />
     </div>
   );
 }
 
-export default App;
+function action() {
+console.log('jgvjgv')
+}
+
+export default doThis;
+export default doThat;

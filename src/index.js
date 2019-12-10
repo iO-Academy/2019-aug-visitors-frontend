@@ -1,9 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import {LandingPage} from './Components/LandingPage';
+
 import './index.css';
-import App from './App';
 
 
+import visitorSignIn from './Components/LandingPage/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class Routing extends React.Component {
+    render() {
+        return (
+            <Router>
+                <div>
+                    <Switch>
+                        <Route exact path="/" component={LandingPage}/>
+                        {/*<Route path="/visitor" component={VisitorSignInPage}/>*/}
+                        {/*<Route path="/landingPage" component={LandingPage}/>*/}
+                        {/*<Route component={NotFound}/>*/}
+                    </Switch>
+                </div>
+            </Router>
+        )
+    }
+}
+
+ReactDOM.render(<Routing />, document.getElementById('root'));
 
