@@ -6,7 +6,6 @@ header {
 .banner {
     padding: 15px 0;
     width: 90%;
-    max-width: 924px;
     min-width: 691px;
     margin: 0 auto;
 }
@@ -57,7 +56,6 @@ footer {
     text-align: right;
     padding: 0 0 25px 0;
     width: 90%;
-    max-width: 924px;
     min-width: 691px;
     margin: 0 auto;
 }
