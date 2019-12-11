@@ -6,6 +6,7 @@ import {Message} from "../Message";
 import {Instructions} from "../Instructions";
 import {TextInput} from "../TextInput";
 import {Button} from "../Button";
+import {Greeting} from "../Greeting";
 
 const html_specialchars = require('html-specialchars');
 
@@ -84,14 +85,35 @@ export class VisitorSignInPage extends Component {
     render() {
         return (
             <div>
-                <Logo className="visitorSignInLogo" />
-                <Instructions />
-                <TextInput action={this.SetForename} name="forename" max="50" min="1" />
-                <TextInput action={this.SetSurname} name="surname" max="50" min="1"  />
-                <TextInput action={this.SetCompany} name="company" max="50" min="0"  />
-                <Button action={this.SignInVisitor} className="btn btn-success" value={"Submit"}  />
-                <Message text={this.state.errorMsg} />
-                <Link to="/" className="btn btn-secondary back">Back</Link>
+                <header>
+                    <div className="banner">
+                        <Logo className="logo" />
+                    </div>
+                </header>
+
+                <main className="main-container">
+                    <div className="sign-in-greeting-container">
+                        <Greeting className="greeting-text" value="Visitor Sign-In"/>
+                    </div>
+                    <div className="sign-in-input-container">
+                        <TextInput action={this.SetForename} name="forename" max="50" min="1" placeholderText="Forename"/>
+                        <TextInput action={this.SetSurname} name="surname" max="50" min="1" placeholderText="Surname" />
+                        <TextInput action={this.SetCompany} name="company" max="50" min="0" placeholderText="Company (optional)" />
+                        <div className="instructions-container">
+                            <Instructions instructions="Please enter your forename and surname. The company name is optional."/>
+                        </div>
+                        <div className="sign-in-button-container">
+                            <Button action={this.SignInVisitor} className="btn btn-success sign-in-button" value={"Submit"}  />
+                        </div>
+                        <Message text={this.state.errorMsg} />
+                    </div>
+                </main>
+
+                <footer>
+                    <div className="back-to-home-link">
+                        <Link to="/" className="btn btn-secondary back">Back</Link>
+                    </div>
+                </footer>
             </div>
         )
     }
