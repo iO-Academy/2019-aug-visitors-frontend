@@ -19,7 +19,7 @@ export class LandingPage extends Component {
             <div>
                 <Logo className="landingLogo"></Logo>
                 <Greeting className="landingGreeting"></Greeting>
-                <Link to="/visitor" className="btn btn-success visitor">Visitor Sign In</Link>
+                <Link to="/visitors" className="btn btn-success visitor">Visitor Sign In</Link>
                 <Link to="/admin" className="btn btn-secondary admin">Admin Sign In</Link>
             </div>
         )

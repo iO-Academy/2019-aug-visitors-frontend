@@ -64,7 +64,7 @@ export class VisitorSignInPage extends Component {
                 'surname': html_specialchars.escape(this.state.surname),
                 'company': html_specialchars.escape(this.state.company)
             }
-            fetch('http://localhost:3001/visitor', {
+            fetch('http://localhost:3001/visitors', {
                 method: 'POST',
                 body: JSON.stringify(visitorData),
                 headers: {
