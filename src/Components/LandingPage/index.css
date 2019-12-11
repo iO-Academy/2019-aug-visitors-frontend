@@ -1,0 +1,12 @@
+.visitor {
+    position: fixed;
+    bottom: 45%;
+    right: 40%;
+}
+
+.admin {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+}
