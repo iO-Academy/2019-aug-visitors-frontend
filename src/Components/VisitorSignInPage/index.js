@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import {Logo} from "../Logo";
 import "./index.css";
-import {SuccessMessage} from "../SuccessMessage";
+import {Message} from "../Message";
 import {Instructions} from "../Instructions";
 import {TextInput} from "../TextInput";
 import {Button} from "../Button";
+
+const html_specialchars = require('html-specialchars');
 
 export class VisitorSignInPage extends Component {
 
@@ -14,7 +16,8 @@ export class VisitorSignInPage extends Component {
         this.state = {
             'forename': '',
             'surname': '',
-            'company': ''
+            'company': '',
+            'errorMsg': ''
         }
     }
 
@@ -33,7 +36,7 @@ export class VisitorSignInPage extends Component {
         this.setState({'company': company});
     }
 
-    ValidateInput = (input) => {
+    ValidateRequiredInput = (input) => {
         var result = false;
         if (input.length >= 1 && input.length <= 50) {
             result = true;
@@ -41,44 +44,53 @@ export class VisitorSignInPage extends Component {
         return result;
     }
 
-    SignInVisitor = () => {
-        let valForename = this.ValidateInput(this.state.forename);
-        let valSurname = this.ValidateInput(this.state.surname);
-        let valCompany = this.ValidateInput(this.state.company);
-
-        console.log(valForename);
-        console.log(valSurname);
-        console.log(valCompany);
-
-
-        let visitorData = {
-            'forename': this.state.forename,
-            'surname': this.state.surname,
-            'company': this.state.company
+    ValidateOptionalInput = (input) => {
+        var result = false;
+        if (input.length <= 50) {
+            result = true;
         }
-        fetch('http://localhost:3001/visitor', {
-            method: 'POST',
-            body: JSON.stringify(visitorData),
-            headers: {
-                'Content-Type': 'application/json'
+        return result;
+    }
+
+    SignInVisitor = () => {
+        let valForename = this.ValidateRequiredInput(this.state.forename);
+        let valSurname = this.ValidateRequiredInput(this.state.surname);
+        let valCompany = this.ValidateOptionalInput(this.state.company);
+
+        if (valForename && valSurname && valCompany) {
+            this.setState({'errorMsg': ''});
+            let visitorData = {
+                'forename': html_specialchars.escape(this.state.forename),
+                'surname': html_specialchars.escape(this.state.surname),
+                'company': html_specialchars.escape(this.state.company)
             }
-        })
-            .then(response => response.json())
-            .then(response => {
-                console.log('visitor registered');
+            fetch('http://localhost:3001/visitor', {
+                method: 'POST',
+                body: JSON.stringify(visitorData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
+                .then(response => response.json())
+                .then(response => {
+                    console.log('visitor registered');
+                })
+        } else {
+            this.setState({'errorMsg': 'Forename and Surname are required for registration. Please try again.'})
+        }
+
     }
 
     render() {
         return (
             <div>
                 <Logo className="visitorSignInLogo" />
-                <SuccessMessage />
                 <Instructions />
                 <TextInput action={this.SetForename} name="forename" max="50" min="1" />
                 <TextInput action={this.SetSurname} name="surname" max="50" min="1"  />
                 <TextInput action={this.SetCompany} name="company" max="50" min="0"  />
                 <Button action={this.SignInVisitor} className="btn btn-success" value={"Submit"}  />
+                <Message text={this.state.errorMsg} />
                 <Link to="/" className="btn btn-secondary back">Back</Link>
             </div>
         )
