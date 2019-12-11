@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import {Button} from "../Button";
-import {Logo} from "../Logo";
-import {Greeting} from "../Greeting";
+import React from "react";
 
-class Logo extends React.Component {
+export class Logo extends React.Component {
     render() {
         return (
         <div>
-            <img src={}
+            <img src={"logo-academy.svg"} />
 
         </div>
         )
     }
 }
+
+
