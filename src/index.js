@@ -13,9 +13,9 @@ class Routing extends React.Component {
             <Router>
                 <div>
                     <Switch>
-                        <Route exact path="/" component={LandingPage}/>
-                        <Route path="/visitors" component={VisitorSignInPage}/>
-                        {/*<Route path="/landingPage" component={LandingPage}/>*/}
+                        <Route exact path="/" component={LandingPage} />
+                        <Route path="/visitors" component={VisitorSignInPage} />
+                        <Route path="/" component={LandingPage} />
                         {/*<Route component={NotFound}/>*/}
                     </Switch>
                 </div>

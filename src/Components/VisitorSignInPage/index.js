@@ -53,9 +53,9 @@ export class VisitorSignInPage extends Component {
     }
 
     SignInVisitor = () => {
-        let valForename = this.ValidateRequiredInput(this.state.forename);
-        let valSurname = this.ValidateRequiredInput(this.state.surname);
-        let valCompany = this.ValidateOptionalInput(this.state.company);
+        let valForename = this.ValidateRequiredInput(this.state.forename.trim());
+        let valSurname = this.ValidateRequiredInput(this.state.surname.trim());
+        let valCompany = this.ValidateOptionalInput(this.state.company.trim());
 
         if (valForename && valSurname && valCompany) {
             this.setState({'errorMsg': ''});
