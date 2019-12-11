@@ -3,10 +3,7 @@ import React from "react";
 export class Greeting extends React.Component {
     render() {
         return (
-            <div>
-                <h2>Hello</h2>
-
-            </div>
+                <h2>Hello - think we should be using state and props</h2>
         )
     }
 }
