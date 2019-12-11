@@ -10,11 +10,9 @@ export class LandingPage extends Component {
     adminAction = () => {
         console.log('Admin')
     }
-
     visitorAction = () => {
         console.log('visitor')
     }
-
 
     render() {
         return (
@@ -26,5 +24,4 @@ export class LandingPage extends Component {
             </div>
         )
     }
-
 }
