@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import {Button} from "../Button";
 import {Link} from "react-router-dom";
-import './index.css';
 import {Logo} from "../Logo";
 import {Greeting} from "../Greeting";
+import "./index.css";
 
 export class LandingPage extends Component {
 
