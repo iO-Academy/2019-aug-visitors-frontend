@@ -120,6 +120,8 @@ export class VisitorSignInPage extends Component {
                     </div>
                 </footer>
 
+                <PopUp message="Visitor sign-in successful!" visibility={this.state.popupVisibility}></PopUp>
+
             </div>
         )
     }

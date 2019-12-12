@@ -20,7 +20,7 @@ export class PopUp extends Component {
                 <div className="background-container">
                     <div className="popup-container">
                         <Icon className="icon"/>
-                        <Message className="message-text" text="Visitor sign-in successful!" />
+                        <Message className="message-text" text={this.props.message} />
                         <img src="checkbox.gif" />
                     </div>
                 </div>
