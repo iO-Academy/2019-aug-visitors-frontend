@@ -4,7 +4,6 @@ import {Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import {LandingPage} from './Components/LandingPage';
 import {VisitorSignInPage} from './Components/VisitorSignInPage';
-import {AdminLoginPopUp} from "./Components/AdminLogInPopUp";
 
 import './index.css';
 import {AdminPage} from "./Components/AdminPage";

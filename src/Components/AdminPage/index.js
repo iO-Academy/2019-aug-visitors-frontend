@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 import "./index.css";
 import {AdminLoginPopUp} from "../AdminLogInPopUp";
-import {Message} from "../Message";
+import {AdminPanel} from "../AdminPanel";
 const html_specialchars = require('html-specialchars');
+
 
 export class AdminPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {'auth': false}
+        this.state = {
+            'auth': false,
+            'popUpVisibility': ''
+        }
     }
 
-    SetAuth = authStatus => {
-        this.setState({'auth': authStatus});
-        console.log('hi Mick J');
+    SetAuth = (authStatus) => {
+        this.setState({
+            'auth': authStatus,
+            'popUpVisibility': 'd-none'
+        })
     }
 
 
@@ -21,17 +27,10 @@ export class AdminPage extends Component {
         return (
             <div>
                 <main className="main-container">
-                    <AdminLoginPopUp authStatus={this.setAuth} />
-                    <h2>Current Registered Visitors</h2>
-                    <table className="table">
-                        <tr>
-                            <th>Forename</th>
-                            <th>Surname</th>
-                            <th>Company</th>
-                            <th>Time in</th>
-                        </tr>
+                    <AdminLoginPopUp authStatus={this.SetAuth} visibility={this.state.popUpVisibility} />
 
-                    </table>
+                    <AdminPanel authorised={this.state.auth}/>
+
                 </main>
             </div>
         )

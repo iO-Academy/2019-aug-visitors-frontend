@@ -15,8 +15,13 @@ export class AdminLoginPopUp extends Component {
         super(props);
         this.state = {
             'pin': '',
+            'visibility': '',
             'errorMsg': ''
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({'visibility': nextProps.visibility})
     }
 
     SetPin = (e) => {
@@ -56,7 +61,7 @@ export class AdminLoginPopUp extends Component {
 
     render() {
         return (
-            <div>
+            <div className={this.state.visibility}>
                 <main className="main-container">
                     <div className="admin-pin-container">
                         <TextInput action={this.SetPin} name="pin" max="4" min="4" placeholderText="Enter 4-digit pin"/>
