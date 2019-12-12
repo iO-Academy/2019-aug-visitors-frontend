@@ -1,0 +1,35 @@
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.popup-container .icon {
+    background-color: #ffffff;
+}
+
+.popup-container {
+    width: 75%;
+    margin: 10vh auto;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 15px 15px 15px #808080;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.popup-container img {
+    height: 150px;
+    width: 150px;
+}
+
+.message-text {
+    font-weight: bold;
+    font-size: 3rem;
+    color: #808080;
+}
