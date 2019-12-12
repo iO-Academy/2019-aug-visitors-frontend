@@ -3,6 +3,8 @@ import "./index.css";
 import {TextInput} from "../TextInput";
 import {Button} from "../Button";
 import {Message} from "../Message";
+import {AdminPage} from "../AdminPage";
+
 
 const html_specialchars = require('html-specialchars');
 
@@ -42,7 +44,10 @@ export class AdminLoginPopUp extends Component {
             })
                 .then(response => response.json())
                 .then(response => {
-                    sessionStorage.token = response.data;
+                    if (response.success) {
+                        sessionStorage.token = response.data;
+                        this.props.authStatus(response.success);
+                    }
                 })
         } else {
             this.setState({'errorMsg': 'Pin is incorrect. Please try again.'})

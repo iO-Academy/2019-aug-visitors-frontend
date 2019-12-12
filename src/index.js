@@ -7,6 +7,7 @@ import {VisitorSignInPage} from './Components/VisitorSignInPage';
 import {AdminLoginPopUp} from "./Components/AdminLogInPopUp";
 
 import './index.css';
+import {AdminPage} from "./Components/AdminPage";
 
 class Routing extends React.Component {
     render() {
@@ -16,7 +17,7 @@ class Routing extends React.Component {
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
                         <Route path="/visitors" component={VisitorSignInPage} />
-                        <Route exact path="/admin" component={AdminLoginPopUp} />
+                        <Route exact path="/admin" component={AdminPage} />
                     </Switch>
                 </div>
             </Router>
