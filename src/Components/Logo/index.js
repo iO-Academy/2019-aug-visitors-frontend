@@ -4,7 +4,7 @@ export class Logo extends React.Component {
     render() {
         return (
             <div className={this.props.className}>
-                <img src={"logo-academy.svg"} />
+                <img src="logo-academy.svg" />
             </div>
         )
     }
