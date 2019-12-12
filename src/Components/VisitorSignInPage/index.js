@@ -107,12 +107,12 @@ export class VisitorSignInPage extends Component {
                         <TextInput action={this.SetForename} name="forename" max="50" min="1" placeholderText="Forename"/>
                         <TextInput action={this.SetSurname} name="surname" max="50" min="1" placeholderText="Surname" />
                         <TextInput action={this.SetCompany} name="company" max="50" min="0" placeholderText="Company (optional)" />
-                        <div className="instructions-container">
-                            <Instructions instructions="Please enter your forename and surname. The company name is optional."/>
-                        </div>
-                        <div className="sign-in-button-container">
-                            <Button action={this.SignInVisitor} className="btn btn-success sign-in-button" value={"Submit"}  />
-                        </div>
+                    <div className="instructions-container">
+                        <Instructions instructions="Please enter your forename and surname. The company name is optional."/>
+                    </div>
+                    <div className="sign-in-button-container">
+                        <Button action={this.SignInVisitor} className="btn btn-success sign-in-button" value={"Submit"}  />
+                    </div>
                         <Message className="text-danger errorMsg" text={this.state.errorMsg} />
                     </div>
                 </main>

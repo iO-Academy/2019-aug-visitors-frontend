@@ -6,7 +6,6 @@ import {VisitorSignInPage} from './Components/VisitorSignInPage';
 
 import './index.css';
 
-
 class Routing extends React.Component {
     render() {
         return (

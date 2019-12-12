@@ -23,6 +23,7 @@ export class LandingPage extends Component {
                         <Link to="/visitors" className="btn sign-in-button">Visitor Sign In</Link>
                     </div>
                 </main>
+
                 <footer>
                     <div className="admin-link">
                         <Link to="/admin" className="btn btn-secondary admin">Admin Sign In</Link>
