@@ -78,6 +78,9 @@ export class VisitorSignInPage extends Component {
                 .then(response => {
                     if (response.success) {
                         this.setState({'popupVisibility':''})
+                        setTimeout(() => {
+                            window.location = "/";
+                        }, 2000);
                     } else {
                         this.setState({'errorMsg': response.msg})
                     }
