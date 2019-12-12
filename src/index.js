@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
-
 import {LandingPage} from './Components/LandingPage';
 import {VisitorSignInPage} from './Components/VisitorSignInPage';
-import {PopUpPage} from "./Components/PopUp";
 
 import './index.css';
 
