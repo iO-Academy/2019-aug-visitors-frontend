@@ -105,7 +105,7 @@ export class VisitorSignInPage extends Component {
                         <div className="sign-in-button-container">
                             <Button action={this.SignInVisitor} className="btn btn-success sign-in-button" value={"Submit"}  />
                         </div>
-                        <Message text={this.state.errorMsg} />
+                        <Message className="text-danger errorMsg" text={this.state.errorMsg} />
                     </div>
                 </main>
 

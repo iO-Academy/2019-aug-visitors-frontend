@@ -11,17 +11,17 @@ export class LandingPage extends Component {
             <div>
                 <header>
                     <div className="banner">
-                        <Logo className="logo" />
+                        <Logo className="logo"/>
                     </div>
                 </header>
 
                 <main className="main-container">
-                        <div className="greeting-container">
-                            <Greeting className="greeting-text" value="Welcome to Mayden Academy"/>
-                        </div>
-                        <div className="sign-in-button-container">
-                            <Link to="/visitors" className="btn sign-in-button">Visitor Sign In</Link>
-                        </div>
+                    <div className="greeting-container">
+                        <Greeting className="greeting-text" value="Welcome to Mayden Academy"/>
+                    </div>
+                    <div className="sign-in-button-container">
+                        <Link to="/visitors" className="btn sign-in-button">Visitor Sign In</Link>
+                    </div>
                 </main>
                 <footer>
                     <div className="admin-link">

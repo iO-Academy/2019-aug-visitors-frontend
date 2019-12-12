@@ -67,6 +67,12 @@ h2.greeting-text {
     border-color: #53a00a;
 }
 
+p.errorMsg.text-danger {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .back-to-home-link {
     text-align: left;
     padding: 0 0 25px 0;

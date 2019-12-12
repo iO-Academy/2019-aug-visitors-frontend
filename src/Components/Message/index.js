@@ -13,7 +13,7 @@ export class Message extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.state.msg}</p>
+                <p className={this.props.className}>{this.state.msg}</p>
             </div>
         )
     }
