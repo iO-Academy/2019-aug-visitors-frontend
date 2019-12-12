@@ -1,12 +1,68 @@
-.visitor {
-    position: fixed;
-    bottom: 45%;
-    right: 40%;
+header {
+    width: 100vw;
 }
 
-.admin {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+.banner {
+    padding: 15px 0;
+    width: 90%;
+    min-width: 691px;
+    margin: 0 auto;
+}
 
+.main-container {
+    height: 60vh;
+    width: 90%;
+    min-height: 400px;
+    min-width: 691px;
+    padding: 5vh 0;
+    margin: 0 auto;
+}
+
+.greeting-container {
+    padding: 25px 0;
+}
+
+.greeting-text {
+    color: #808080;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2.greeting-text {
+    margin: 0;
+}
+
+a.sign-in-button {
+    display: block;
+    width: 60%;
+    min-width: 500px;
+    margin: 0 auto;
+    color: #ffffff;
+    background-color: #53a00a;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+
+a.sign-in-button:hover {
+    color: #ffffff;
+}
+
+footer {
+    height: 10vh;
+}
+
+.admin-link {
+    text-align: right;
+    padding: 0 0 25px 0;
+    width: 90%;
+    min-width: 691px;
+    margin: 0 auto;
+}
+
+.btn.btn-secondary {
+    background-color: #808080;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding: 5px 15px;
 }

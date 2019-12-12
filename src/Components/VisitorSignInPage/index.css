@@ -1,0 +1,89 @@
+.main-container {
+    padding: 0 0 0 0;
+}
+
+.sign-in-greeting-container {
+    padding: 10px 0 15px 0;
+}
+
+.greeting-text {
+    color: #0b7384;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+h2.greeting-text {
+    margin: 0;
+}
+
+.sign-in-input-container {
+    padding: 15px 0;
+    overflow: auto;
+}
+
+.sign-in-input-container input {
+    display: block;
+    float: left;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.sign-in-input-container > input:nth-child(1) {
+    width: 47.5%;
+    margin: 0 5% 0 0;
+}
+
+.sign-in-input-container > input:nth-child(2) {
+    width: 47.5%;
+}
+
+.sign-in-input-container > input:nth-child(3) {
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+
+.instructions-container p {
+    font-size: 1.5rem;
+    color: #808080;
+}
+
+.sign-in-button-container {
+    text-align: center;
+}
+
+.sign-in-button {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    font-size: 2.5rem;
+    padding: 10px 0;
+    background-color: #53a00a;
+    border-color: #53a00a;
+}
+
+.sign-in-button:hover {
+    background-color: #53a00a;
+    border-color: #53a00a;
+}
+
+p.errorMsg.text-danger {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.back-to-home-link {
+    text-align: left;
+    padding: 0 0 25px 0;
+    width: 90%;
+    min-width: 691px;
+    margin: 0 auto;
+}
+
+.btn.btn-secondary {
+    background-color: #808080;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding: 5px 15px;
+}
