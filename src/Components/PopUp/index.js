@@ -17,14 +17,14 @@ export class PopUp extends Component {
     render() {
         return (
             <div className={this.state.visibility}>
-                {/*<div className="background-container">*/}
+                <div className="background-container">
                     <div className="popup-container">
                         <Icon className="icon"/>
-                        <Message className="message-text" value={this.props.message} />
-                        {/*<img src={"checkbox.gif"}/>*/}
+                        <Message className="message-text" text="Visitor sign-in successful!" />
+                        <img src="checkbox.gif" />
                     </div>
                 </div>
-            // </div>
+             </div>
         )
     }
 }

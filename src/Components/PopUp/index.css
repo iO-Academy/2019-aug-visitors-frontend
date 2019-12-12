@@ -1,20 +1,26 @@
-.popup-container {
+.background-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #808080;
 }
 
 .popup-container .icon {
     background-color: #ffffff;
-    display: inline-block;
+    /*display: inline-block;*/
+}
+
+.popup-container {
+    width: 75%;
+    margin: 10vh auto;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 25px;
 }
 
 .popup-container img {
-    width: 100px;
-    position: fixed;
-    top: 20px;
-    left: 45vw;
+    height: 150px;
+    width: 150px;
 }
