@@ -79,7 +79,6 @@ export class VisitorSignInPage extends Component {
         } else {
             this.setState({'errorMsg': 'Forename and Surname are required for registration. Please try again.'})
         }
-
     }
 
     render() {
