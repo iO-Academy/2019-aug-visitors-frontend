@@ -14,19 +14,17 @@ export class CurrentVisitors extends Component {
     componentWillReceiveProps(nextProps) {
         this.setState({'authorised': nextProps.authorised})
         if (nextProps.authorised) {
-            this.setState({
-                'visitors': [{
-                    'forename': 'Mike',
-                    'surname': 'Jaguar',
-                    'Company': 'Mayden Academy',
-                    'timestamp': '1576158988670'
-                }]
-            })
-            // call fetch request function
+            this.GetCurrentVisitors();
         }
     }
 
-    // fetch
+    GetCurrentVisitors = async () => {
+        let visitors = await fetch('http://localhost:3001/visitors');
+        visitors = await visitors.json();
+        if (visitors.success) {
+            this.setState({'visitors': visitors.data});
+        }
+    }
 
 
     render = () => {
@@ -38,7 +36,7 @@ export class CurrentVisitors extends Component {
                 <th>{visitor.company}</th>
                 <th>{visitor.timestamp}</th>
             </tr>
-            visitors.push()
+            visitors.push(temp)
         })
 
         return (
@@ -51,6 +49,7 @@ export class CurrentVisitors extends Component {
                         <th>Company</th>
                         <th>Time in</th>
                     </tr>
+                    {visitors}
                 </table>
             </div>
         )
