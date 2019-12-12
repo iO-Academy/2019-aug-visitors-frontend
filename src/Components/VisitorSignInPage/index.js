@@ -7,6 +7,7 @@ import {Instructions} from "../Instructions";
 import {TextInput} from "../TextInput";
 import {Button} from "../Button";
 import {Greeting} from "../Greeting";
+import {PopUp} from "../PopUp";
 
 const html_specialchars = require('html-specialchars');
 
@@ -18,7 +19,8 @@ export class VisitorSignInPage extends Component {
             'forename': '',
             'surname': '',
             'company': '',
-            'errorMsg': ''
+            'errorMsg': '',
+            'popupVisibility': 'd-none'
         }
     }
 
@@ -65,6 +67,7 @@ export class VisitorSignInPage extends Component {
                 'surname': html_specialchars.escape(this.state.surname),
                 'company': html_specialchars.escape(this.state.company)
             }
+            this.setState({'popupVisibility':''}) // remove this line when BE works
             fetch('http://localhost:3001/visitors', {
                 method: 'POST',
                 body: JSON.stringify(visitorData),
@@ -74,7 +77,7 @@ export class VisitorSignInPage extends Component {
             })
                 .then(response => response.json())
                 .then(response => {
-                    console.log('visitor registered');
+                    this.setState({'popupVisibility':''})
                 })
         } else {
             this.setState({'errorMsg': 'Forename and Surname are required for registration. Please try again.'})
@@ -113,6 +116,9 @@ export class VisitorSignInPage extends Component {
                         <Link to="/" className="btn btn-secondary back">Back</Link>
                     </div>
                 </footer>
+
+                <PopUp message="Mike is awesome" visibility={this.state.popupVisibility}></PopUp>
+
             </div>
         )
     }

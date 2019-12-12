@@ -1,0 +1,21 @@
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.popup-container .icon {
+    background-color: #ffffff;
+    display: inline-block;
+}
+
+.popup-container img {
+    width: 100px;
+    position: fixed;
+    top: 20px;
+    left: 45vw;
+}
+
